@@ -19,6 +19,7 @@ abstract class MockJobManagement extends AbstractJobManagement {
                     'hudson.model.Item.Cancel',
                     'hudson.model.Item.Release',
                     'hudson.model.Item.ExtendedRead',
+                    'hudson.model.Item.ViewStatus',
                     'hudson.model.Run.Delete',
                     'hudson.model.Run.Update',
                     'hudson.scm.SCM.Tag'

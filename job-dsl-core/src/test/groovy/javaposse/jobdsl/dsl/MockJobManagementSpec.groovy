@@ -11,7 +11,7 @@ class MockJobManagementSpec extends Specification {
         Set<String> permissions = mockJobManagement.getPermissions('hudson.security.AuthorizationMatrixProperty')
 
         then:
-        permissions.size() == 12
+        permissions.size() == 13
         'hudson.model.Item.Delete' in permissions
         'hudson.model.Item.Configure' in permissions
         'hudson.model.Item.Read' in permissions
@@ -21,6 +21,7 @@ class MockJobManagementSpec extends Specification {
         'hudson.model.Item.Cancel' in permissions
         'hudson.model.Item.Release' in permissions
         'hudson.model.Item.ExtendedRead' in permissions
+        'hudson.model.Item.ViewStatus' in permissions
         'hudson.model.Run.Delete' in permissions
         'hudson.model.Run.Update' in permissions
         'hudson.scm.SCM.Tag' in permissions
