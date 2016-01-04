@@ -333,16 +333,16 @@ class PublisherContextSpec extends Specification {
         xUnitNode.extraConfiguration[0].testTimeMargin[0].value() == 3000
 
         def failedThresholds = xUnitNode.thresholds[0].'org.jenkinsci.plugins.xunit.threshold.FailedThreshold'[0]
-        failedThresholds.unstableThreshold[0].value() == 0
-        failedThresholds.unstableNewThreshold[0].value() == 0
-        failedThresholds.failureThreshold[0].value() == 0
-        failedThresholds.failureNewThreshold[0].value() == 0
+        failedThresholds.unstableThreshold[0].value() == ''
+        failedThresholds.unstableNewThreshold[0].value() == ''
+        failedThresholds.failureThreshold[0].value() == ''
+        failedThresholds.failureNewThreshold[0].value() == ''
 
         def skippedThresholds = xUnitNode.thresholds[0].'org.jenkinsci.plugins.xunit.threshold.SkippedThreshold'[0]
-        skippedThresholds.unstableThreshold[0].value() == 0
-        skippedThresholds.unstableNewThreshold[0].value() == 0
-        skippedThresholds.failureThreshold[0].value() == 0
-        skippedThresholds.failureNewThreshold[0].value() == 0
+        skippedThresholds.unstableThreshold[0].value() == ''
+        skippedThresholds.unstableNewThreshold[0].value() == ''
+        skippedThresholds.failureThreshold[0].value() == ''
+        skippedThresholds.failureNewThreshold[0].value() == ''
 
         1 * jobManagement.requirePlugin('xunit')
     }
@@ -377,8 +377,8 @@ class PublisherContextSpec extends Specification {
 
         def skippedThresholds = xUnitNode.thresholds[0].'org.jenkinsci.plugins.xunit.threshold.SkippedThreshold'[0]
         skippedThresholds.unstableThreshold[0].value() == 7
-        skippedThresholds.unstableNewThreshold[0].value() == 0
-        skippedThresholds.failureThreshold[0].value() == 0
+        skippedThresholds.unstableNewThreshold[0].value() == ''
+        skippedThresholds.failureThreshold[0].value() == ''
         skippedThresholds.failureNewThreshold[0].value() == 9
 
         1 * jobManagement.requirePlugin('xunit')
@@ -437,16 +437,16 @@ class PublisherContextSpec extends Specification {
         xUnitNode.extraConfiguration[0].testTimeMargin[0].value() == 3000
 
         def failedThresholds = xUnitNode.thresholds[0].'org.jenkinsci.plugins.xunit.threshold.FailedThreshold'[0]
-        failedThresholds.unstableThreshold[0].value() == 0
-        failedThresholds.unstableNewThreshold[0].value() == 0
-        failedThresholds.failureThreshold[0].value() == 0
-        failedThresholds.failureNewThreshold[0].value() == 0
+        failedThresholds.unstableThreshold[0].value() == ''
+        failedThresholds.unstableNewThreshold[0].value() == ''
+        failedThresholds.failureThreshold[0].value() == ''
+        failedThresholds.failureNewThreshold[0].value() == ''
 
         def skippedThresholds = xUnitNode.thresholds[0].'org.jenkinsci.plugins.xunit.threshold.SkippedThreshold'[0]
-        skippedThresholds.unstableThreshold[0].value() == 0
-        skippedThresholds.unstableNewThreshold[0].value() == 0
-        skippedThresholds.failureThreshold[0].value() == 0
-        skippedThresholds.failureNewThreshold[0].value() == 0
+        skippedThresholds.unstableThreshold[0].value() == ''
+        skippedThresholds.unstableNewThreshold[0].value() == ''
+        skippedThresholds.failureThreshold[0].value() == ''
+        skippedThresholds.failureNewThreshold[0].value() == ''
 
         1 * jobManagement.requirePlugin('xunit')
 
