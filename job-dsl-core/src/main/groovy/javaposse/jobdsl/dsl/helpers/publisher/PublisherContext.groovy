@@ -72,16 +72,6 @@ class PublisherContext extends AbstractExtensibleContext {
         // Now that the context has what we need
         Node emailNode = new NodeBuilder().'hudson.plugins.emailext.ExtendedEmailPublisher' {
             recipientList recipients != null ? recipients : emailContext.emailRecipients ?: '$DEFAULT_RECIPIENTS'
-            contentType 'default'
-            defaultSubject subjectTemplate ?: emailContext.emailSubject ?: '$DEFAULT_SUBJECT'
-            defaultContent contentTemplate ?: emailContext.emailContent ?: '$DEFAULT_CONTENT'
-            attachmentsPattern ''
-            presendScript '$DEFAULT_PRESEND_SCRIPT'
-            attachBuildLog emailContext.emailAttachBuildLog
-            compressBuildLog false
-            replyTo emailContext.emailReplyTo ?: '$DEFAULT_REPLYTO'
-            saveOutput false
-
             configuredTriggers {
                 emailContext.emailTriggers.each { EmailTriggerContext trigger ->
                     "hudson.plugins.emailext.plugins.trigger.${trigger.triggerShortName}Trigger" {
@@ -102,6 +92,17 @@ class PublisherContext extends AbstractExtensibleContext {
                     }
                 }
             }
+            contentType 'default'
+            defaultSubject subjectTemplate ?: emailContext.emailSubject ?: '$DEFAULT_SUBJECT'
+            defaultContent contentTemplate ?: emailContext.emailContent ?: '$DEFAULT_CONTENT'
+            attachmentsPattern ''
+            presendScript '$DEFAULT_PRESEND_SCRIPT'
+            classpath ''
+            attachBuildLog emailContext.emailAttachBuildLog
+            compressBuildLog false
+            replyTo emailContext.emailReplyTo ?: '$DEFAULT_REPLYTO'
+            saveOutput false
+            disabled false
         }
 
         // Apply their overrides
